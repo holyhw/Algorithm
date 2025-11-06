@@ -1,10 +1,10 @@
 function solution(my_string) {
-  const removeItemSet = new Set();
+  const removeItemSet = [];
   const answer = [...my_string];
   for (let i = 0; i < my_string.length - 1; i++) {
     for (let j = i + 1; j < my_string.length; j++) {
-      if (my_string[i] === my_string[j]) {
-        removeItemSet.add(j);
+      if (my_string[i] === my_string[j] &&!removeItemSet.includes(i)) {
+        removeItemSet.push(j);
       }
     }
   }
